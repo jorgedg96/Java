@@ -1,0 +1,43 @@
+import java.util.Scanner;
+/**
+ * 
+ * @author Jorgedg96
+ *
+ */
+public class NotasAlumnos {
+
+	public static void main(String[] args) {
+		// TODO Apéndice de método generado automáticamente
+		  Scanner sc = new Scanner(System.in);
+	        int numeroAlumno;
+	        int notaAlumno;
+	        double suma = 0, media;	        
+	        do {
+	            System.out.print("Número de alumnos de la clase: ");
+	            numeroAlumno = sc.nextInt();
+	        } while (numeroAlumno <= 0);
+	        
+	        double[] notas = new double[numeroAlumno]; 
+	        	      
+	        for (notaAlumno = 0; notaAlumno < notas.length; notaAlumno++) {
+	            System.out.print("Alumno " + (notaAlumno + 1) + " Nota final: ");
+	            notas[notaAlumno] = sc.nextDouble();
+	        }
+	        
+	        for (notaAlumno = 0; notaAlumno < notas.length; notaAlumno++) {
+	            suma = suma + notas[notaAlumno];
+	        }
+       
+	        media = suma / notas.length;	       
+	        System.out.printf("Nota media del curso: %.2f %n", media);	       
+	        System.out.println("Notas superiores a la media: ");
+	        
+	        for (notaAlumno = 0; notaAlumno < notas.length; notaAlumno++) {
+	            if (notas[notaAlumno] > media) {
+	                System.out.println("Alumno numero " + (notaAlumno + 1)+ " Tiene una nota : " + notas[notaAlumno]);
+	            }
+	        }
+	    }
+
+}
+	
